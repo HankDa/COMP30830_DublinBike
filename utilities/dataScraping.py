@@ -1,6 +1,14 @@
 import requests
 import json
 
+import sys
+import os
+
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[0]
+sys.path.append(rootPath)
+
+
 class JCD_api:
 
     def __init__(self, contract, api, apikey):
@@ -8,6 +16,7 @@ class JCD_api:
         self._api = api
         self._apikey = apikey
         self._request = None
+        # date type of stations is list of dictionary (json)
         self.staions = None
         # self.sendRequest()
 
